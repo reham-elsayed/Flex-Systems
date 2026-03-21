@@ -35,12 +35,14 @@ export type TenantMember = $Result.DefaultSelection<Prisma.$TenantMemberPayload>
 export type TenantInvitation = $Result.DefaultSelection<Prisma.$TenantInvitationPayload>
 /**
  * Model Employee
- * 
+ * ///////////////
+ * ///////////////
  */
 export type Employee = $Result.DefaultSelection<Prisma.$EmployeePayload>
 /**
  * Model AuditLog
- * 
+ * ///////////////
+ * ///////////////
  */
 export type AuditLog = $Result.DefaultSelection<Prisma.$AuditLogPayload>
 
