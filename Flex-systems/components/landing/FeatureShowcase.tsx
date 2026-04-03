@@ -1,0 +1,91 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Layers, Shield, Users, BarChart3, Zap, Globe } from "lucide-react";
+import { FeatureHeader } from "./FeatureHeader";
+import { SlideInElement } from "./SlideInElement";
+import dynamic from "next/dynamic";
+
+const AnimatedTasks = dynamic(() => import("../AnimatedLottie/AnimatedTasks"), { ssr: false });
+
+const features = [
+    {
+        name: "Multi-Tenancy",
+        description: "Built-in tenant isolation and data security. Create unlimited workspaces.",
+        icon: Layers,
+        color: "text-blue-500",
+        bg: "bg-blue-50 dark:bg-blue-900/10",
+    },
+    {
+        name: "Role-Based Access",
+        description: "Granular permission system to control who can see and do what.",
+        icon: Shield,
+        color: "text-green-500",
+        bg: "bg-green-50 dark:bg-green-900/10",
+    },
+    {
+        name: "Team Collaboration",
+        description: "Invite members via email and manage team structure effortlessly.",
+        icon: Users,
+        color: "text-purple-500",
+        bg: "bg-purple-50 dark:bg-purple-900/10",
+    },
+    {
+        name: "Modular Architecture",
+        description: "Enable or disable modules like HR, CRM, and Shop per tenant.",
+        icon: Zap,
+        color: "text-yellow-500",
+        bg: "bg-yellow-50 dark:bg-yellow-900/10",
+    },
+    {
+        name: "Analytics",
+        description: "Beautiful dashboards and reporting tools for data-driven decisions.",
+        icon: BarChart3,
+        color: "text-pink-500",
+        bg: "bg-pink-50 dark:bg-pink-900/10",
+    },
+    {
+        name: "Global Scale",
+        description: "Ready for internationalization and deployed on edge networks.",
+        icon: Globe,
+        color: "text-cyan-500",
+        bg: "bg-cyan-50 dark:bg-cyan-900/10",
+    },
+];
+
+export function FeatureShowcase() {
+    return (
+        <section id="features" className="py-24 sm:py-32 relative overflow-hidden">
+            {/* Background Reusable SlideIn Element */}
+            <SlideInElement className="left-0 top-24 w-48 md:w-64 max-w-[50vw] opacity-30 md:opacity-60 pointer-events-none z-0">
+                <AnimatedTasks />
+            </SlideInElement>
+
+            <div className="container px-4 md:px-6 relative z-10">
+                <FeatureHeader />
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 relative z-10">
+                    {features.map((feature, index) => (
+                        <motion.div
+                            key={feature.name}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="relative group p-8 rounded-2xl border border-gray-100 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300"
+                        >
+                            <div className={`inline-flex p-3 rounded-lg mb-4 ${feature.color}`}>
+                                <feature.icon className="h-6 w-6" aria-hidden="true" />
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                                {feature.name}
+                            </h3>
+                            <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
+                                {feature.description}
+                            </p>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
