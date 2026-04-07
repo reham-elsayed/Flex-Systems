@@ -61,7 +61,7 @@ export function FeatureShowcase() {
                 <AnimatedTasks />
             </SlideInElement>
 
-            <div className="container px-4 md:px-6 relative z-10">
+            <div className="max-w-7xl px-4 mx-auto md:px-6 relative z-10 ">
                 <FeatureHeader />
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 relative z-10">
                     {features.map((feature, index) => (

@@ -11,10 +11,13 @@ interface SlideInElementProps {
 export function SlideInElement({ children, className = "" }: SlideInElementProps) {
     return (
         <motion.div
-            initial={{ x: "-5em", opacity: 0 }}
-            whileInView={{ x: "1.13438em", opacity: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ y: 0 }}
+            animate={{ y: [0, -20, 0] }}
+            transition={{ 
+                duration: 6, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+            }}
             className={`absolute ${className}`}
             style={{ 
                 willChange: "transform",
