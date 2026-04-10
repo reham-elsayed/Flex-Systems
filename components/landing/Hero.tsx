@@ -14,16 +14,16 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400"
+                        className="text-4xl font-bold tracking-tighter text-foreground sm:text-6xl"
                     >
                         Build Multi-tenant SaaS<br />
-                        <span className="text-primary">Faster than ever</span>
+                        <span className="mesh-gradient-text pb-2">Faster than ever</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"
+                        className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto"
                     >
                         The ultimate boilerplate for building scalable, secure, and feature-rich SaaS applications.
                         Tenant management, role-based access, and modern UI components out of the box.
@@ -35,19 +35,17 @@ export function Hero() {
                         className="mt-10 flex items-center justify-center gap-x-6"
                     >
                         <Link href="/workspace">
-                            <Button size="lg" className="gap-2 h-12 px-8 text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
+                            <Button size="lg" className="gap-2 h-12 px-8 text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all bg-gradient-to-b from-primary to-primary/80 shimmer-effect inner-glow-inset dark:inner-glow-inset-dark border border-primary/50">
                                 Get Started
                                 <ArrowRight className="h-4 w-4" />
                             </Button>
                         </Link>
-                        <Link href="#features" className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:text-primary transition-colors">
+                        <Link href="#features" className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors">
                             Learn more <span aria-hidden="true">→</span>
                         </Link>
                     </motion.div>
                 </div>
 
-                {/* Abstract Background Shapes */}
-                {/* Abstract Background Shapes Removed */}
             </div>
         </section>
     );

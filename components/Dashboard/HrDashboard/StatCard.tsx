@@ -2,7 +2,7 @@ import React from 'react';
 
 export function StatCard({ label, value, icon: Icon, colorClass }: { label: string; value: string; icon: React.ElementType; colorClass: string }) {
     return (
-        <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-card border border-border/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow inner-glow-inset dark:inner-glow-inset-dark">
             <div className="flex items-center justify-between mb-4">
                 <div className={`p-3 rounded-xl ${colorClass}`}>
                     <Icon className="w-6 h-6" />

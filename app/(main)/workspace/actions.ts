@@ -37,7 +37,10 @@ export async function getSelectedTenant(tenant: Tenant) {
         const headerList = await headers();
         const cookieHeader = headerList.get('cookie') || '';
 
-        const response = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000'}/token`, {
+        const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+            ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+            : 'http://localhost:3000';
+        const response = await fetch(`${baseUrl}/token`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
